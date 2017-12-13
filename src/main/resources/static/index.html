@@ -5,9 +5,12 @@
     <title>FizzBuzz</title>
     <link href="./webjars/bootstrap/3.3.7-1/css/bootstrap.css" rel="stylesheet">
     <script src="webjars/angularjs/1.6.6/angular.js"></script>
+    <script src="webjars/angularjs/1.6.6/angular-route.js"></script>
     <script src="js/app/app.js"></script>
-    <script src="js/app/controllers/fizzBuzzController.js"></script>
     <script src="js/app/components/fizzBuzzEvaluator.js"></script>
+    <script src="js/app/components/fizzBuzzResults.js"></script>
+    <script src="js/app/services/fizzBuzzResultsService.js"></script>
+    <script src="js/app/services/broadcastService.js"></script>
 
 </head>
 <body ng-app="fizzbuzz">
@@ -15,23 +18,17 @@
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fizz Buzz</a>
+            <a class="navbar-brand" href="#!info">Fizz Buzz</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Web UI</a></li>
-            <li><a href="/fizzbuzz/evaluate/1">REST API</a></li>
+            <li><a href="#!fizzbuzz">Web UI</a></li>
+            <li><a href="/fizzbuzz/api/evaluate/1">REST API</a></li>
         </ul>
     </div>
 </nav>
 
-<div ng-controller="fizzBuzzController as ctrl">
-
-    <div class="list-group">
-        <div class="col-md-6 col-md-offset-3">
-            <fizz-buzz-evaluator></fizz-buzz-evaluator>
-        </div>
-    </div>
-</div>
+<main ng-view>
+</main>
 
 </body>
 </html>

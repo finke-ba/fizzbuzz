@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/fizzbuzz")
+@RequestMapping("/fizzbuzz/api")
 public class FizzBuzzController {
 
     private FizzBuzzService fizzBuzzService;
