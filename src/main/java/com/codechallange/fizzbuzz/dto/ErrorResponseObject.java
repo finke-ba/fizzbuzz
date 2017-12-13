@@ -16,4 +16,11 @@ public class ErrorResponseObject {
     public void setErrors(List<String> errors) {
         this.errors = errors;
     }
+
+    @Override
+    public String toString() {
+        return "ErrorResponseObject{" +
+                "errors=" + errors +
+                '}';
+    }
 }

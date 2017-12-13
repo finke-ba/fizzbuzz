@@ -25,4 +25,12 @@ public class ResponseObject {
     public void setFizzbuzz(String fizzbuzz) {
         this.fizzbuzz = fizzbuzz;
     }
+
+    @Override
+    public String toString() {
+        return "ResponseObject{" +
+                "number=" + number +
+                ", fizzbuzz='" + fizzbuzz + '\'' +
+                '}';
+    }
 }
