@@ -7,21 +7,28 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.Optional;
 import java.util.logging.Logger;
+
+import static java.math.BigInteger.ZERO;
 
 @Service
 public class FizzBuzzServiceImpl implements FizzBuzzService {
 
     private static final Logger LOG = Logger.getLogger(FizzBuzzServiceImpl.class.getName());
+    private final static BigInteger THREE = BigInteger.valueOf(3L);
+    private final static BigInteger FIVE = BigInteger.valueOf(5L);
+    private static final String FIZZ = "Fizz";
+    private static final String BUZZ = "Buzz";
 
     @Override
     public ResponseEntity evaluate(String stringNumber) {
         LOG.info("Evaluating string number: " + stringNumber);
 
-        int number;
+        BigInteger number;
         try {
-            number = Integer.parseInt(stringNumber);
+            number = new BigInteger(stringNumber);
         } catch (NumberFormatException e) {
             LOG.severe("Expected number, got NumberFormatException: " + e.getMessage());
             return generateErrorMessage("Expected number, got " + stringNumber, HttpStatus.BAD_REQUEST);
@@ -32,13 +39,14 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
                 .body(evaluate(number));
     }
 
-    private ResponseObject evaluate(int number) {
+    private ResponseObject evaluate(BigInteger number) {
         String result = Optional.of(number)
-                .map(n -> (n % 3 == 0 ? "Fizz" : "") + (n % 5 == 0 ? "Buzz" : ""))
+                .map(n -> (number.mod(THREE).equals(ZERO) ? FIZZ : "") + (number.mod(FIVE).equals(ZERO) ? BUZZ : ""))
                 .get();
 
         ResponseObject responseObject = new ResponseObject();
-        responseObject.setResponse(result.isEmpty() ? Integer.toString(number) : result);
+        responseObject.setNumber(number);
+        responseObject.setFizzbuzz(result.isEmpty() ? number.toString() : result);
 
         return responseObject;
     }

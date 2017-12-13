@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form ng-submit="ctrl.evaluateNumber()">
+            <div class="form-group">
+                <label for="numberEvaluateInput">Number for evaluate</label>
+                <input type="number" class="form-control" id="numberEvaluateInput" aria-describedby="numberEvaluateHelp"
+                       placeholder="Enter number" ng-model="ctrl.number">
+                <small id="numberEvaluateHelp" class="form-text text-muted">Write down number to check is it Fizz, Buzz
+                    or
+                    FizzBuzz.
+                </small>
+            </div>
+            <button type="submit" class="btn btn-primary">Evaluate</button>
+        </form>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <span>Results:</span>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Source Number</th>
+            <th>Evaluated Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="result in ctrl.results">
+            <th scope="row">{{$index + 1}}</th>
+            <td>{{result.number}}</td>
+            <td>{{result.fizzbuzz}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
