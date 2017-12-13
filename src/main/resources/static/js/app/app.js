@@ -9,6 +9,9 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when('/fizzbuzz', {
             templateUrl: 'fizzbuzz.html'
         })
+        .when('/docs', {
+            templateUrl: 'api-doc.html'
+        })
         .otherwise({
             redirectTo: '/info'
         })
