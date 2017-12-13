@@ -1,0 +1,31 @@
+= FizzBuzz REST Service API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+= Resources
+
+== FizzBuzz REST Service
+
+The FizzBuzz provides the entry point into the service.
+
+=== Accessing the evaluate GET with number 30
+
+==== Request structure
+
+include::{snippets}/fizz-buzz-controller-test/evaluate/http-request.adoc[]
+
+==== Response fields
+
+include::{snippets}/fizz-buzz-controller-test/evaluate/response-fields.adoc[]
+
+==== Example response
+
+include::{snippets}/fizz-buzz-controller-test/evaluate/http-response.adoc[]
+
+==== CURL request
+
+include::{snippets}/fizz-buzz-controller-test/evaluate/curl-request.adoc[]
