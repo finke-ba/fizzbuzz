@@ -34,3 +34,4 @@ And also you can find this file on frontend in Documentation menu.
 * Building project only by maven, without nodejs(Can`t use karma from Maven webjars due to errors with this package).
 * Save evaluated numbers to cache or to DB to prevent calculating already existing values. Don`t do this because in 
 current case it is more productive to calculate every time than save to DB or cache.
+* Fix css styles for Documentation menu.
