@@ -2,10 +2,10 @@ angular.module('fizzbuzz').component('fizzBuzzResults', {
     templateUrl: "fizzBuzzResults.html",
     controller: FizzBuzzResultsController,
     controllerAs: "ctrl",
-    $inject: ['$http', '$scope', 'fizzBuzzResultsService']
+    $inject: ['$scope', 'fizzBuzzResultsService']
 });
 
-function FizzBuzzResultsController($http, $scope, fizzBuzzResultsService) {
+function FizzBuzzResultsController($scope, fizzBuzzResultsService) {
     var ctrl = this;
     ctrl.results = fizzBuzzResultsService.getResults();
     ctrl.isShow = ctrl.results.length > 0;

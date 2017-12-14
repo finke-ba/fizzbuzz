@@ -2,10 +2,10 @@ angular.module('fizzbuzz').component('fizzBuzzEvaluator', {
     templateUrl: "fizzBuzzEvaluator.html",
     controller: FizzBuzzEvaluatorController,
     controllerAs: "ctrl",
-    $inject: ['$http', 'fizzBuzzResultsService']
+    $inject: ['fizzBuzzResultsService']
 });
 
-function FizzBuzzEvaluatorController($http, fizzBuzzResultsService) {
+function FizzBuzzEvaluatorController(fizzBuzzResultsService) {
     var ctrl = this;
 
     ctrl.evaluateNumber = function () {
