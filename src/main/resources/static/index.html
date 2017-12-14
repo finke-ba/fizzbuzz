@@ -11,6 +11,7 @@
     <script src="js/app/components/fizzBuzzResults.js"></script>
     <script src="js/app/services/fizzBuzzResultsService.js"></script>
     <script src="js/app/services/broadcastService.js"></script>
+    <script src="js/app/directives/ulActiveLink.js"></script>
 
 </head>
 <body ng-app="fizzbuzz">
@@ -20,7 +21,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="#!info">Fizz Buzz</a>
         </div>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" ul-active-link>
             <li><a href="#!fizzbuzz">Web UI</a></li>
             <li><a href="/fizzbuzz/api/evaluate/1">REST API</a></li>
             <li><a href="#!docs">Documentation</a></li>
